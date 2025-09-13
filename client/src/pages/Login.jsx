@@ -31,7 +31,6 @@ export default function LoginPage() {
         const result = await signInWithPopup(auth, googleProvider);
         const user = result.user;
         if (user.emailVerified) {
-            console.log('Successfully logged in:', user);
             navigate('/');
         } else {
             setIsLoading(false)

@@ -11,14 +11,14 @@ export default function AboutPage() {
         <h1 className="text-5xl font-extrabold text-center text-sky-50 mb-10 animate-fade-in-down">
           <FaInfoCircle className="inline-block mr-4" />About us.
         </h1>
-        <div className="bg-neutral-900 shadow-2xl rounded-xl p-10 border border-neutral-600 transform transition-all duration-500">
+        <div className="bg-neutral-900 shadow-2xl rounded-[4px] p-10 border border-neutral-700 transform transition-all duration-500">
           <p className="text-xl text-gray-300 mb-6 leading-relaxed">
             <FaGlobeAmericas className="inline-block text-orange-400 mr-3" />
             Welcome to the About page of the Mega UDP Web App! Our core mission is to empower users by providing free, reliable UDP configurations. These configurations are meticulously crafted to enable seamless utilization of HTTP Custom VPNs, ensuring your online privacy and freedom.
           </p>
           <p className="text-xl text-gray-300 mb-6 leading-relaxed">
             <FaUserTie className="inline-block text-orange-400 mr-3" />
-            This innovative application is proudly brought to you by <a href="#" className="font-bold text-orange-400">Megasus</a>. We are deeply committed to delivering a robust, user-friendly, and secure platform that caters to all your UDP configuration requirements, making advanced networking accessible to everyone.
+            This innovative application is proudly brought to you by <a target="_blank" href="https://instagram.com/itsmegasus" className="font-bold text-orange-400">Megasus</a>. We are deeply committed to delivering a robust, user-friendly, and secure platform that caters to all your UDP configuration requirements, making advanced networking accessible to everyone.
           </p>
           <p className="text-xl text-gray-300 leading-relaxed">
             <FaPalette className="inline-block text-orange-400 mr-3" />

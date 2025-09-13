@@ -44,12 +44,10 @@ app.post('/get-udp-data', async (req, res) => {
     if(user.uuid !== null || undefined){
       const allUdpDATA = await udpDataRef.once('value');
       const snapshot = await allUdpDATA.val();
-      console.log(snapshot);
       res.status(200).json({snapshot})
     }
-  } catch (error){
+  }catch(error){
     res.status(500).send("There was an Error on Our Server..!: ", error)
-    console.log("Server Error:", error);
   }
 })
 
@@ -58,25 +56,43 @@ app.post('/push-udp-data', async (req, res) => {
   const userIdToken = req.body.userIdToken;
   const udpDATA = req.body.udpDATA;
 
-  if (!udpDATA || !userIdToken) {
+  if(!udpDATA || !userIdToken) {
     return res.status(400).send("Bad Request: Data is missing.");
   }
 
   try {
     const user = await admin.auth().verifyIdToken(userIdToken);
 
-    if (user.email !== process.env.ADMIN_EMAIL) {
+    if(user.email !== process.env.ADMIN_EMAIL) {
       return res.status(403).send("Forbidden: Only admin can post data.");
     }
 
     await udpDataRef.push(udpDATA);
     res.status(200).send("Data saved successfully.");
 
-  } catch (error) {
+  }catch(error) {
     console.error("Error processing UDP data:", error);
   }
 });
 
+app.post('/delete-udp-data', async (req, res) => {
+  const { userIdToken, targetItem } = req.body;
+  if(!userIdToken || !targetItem){
+    return res.status(400).send("Invalid Request.")
+  }
+  try {
+    const user = await admin.auth().verifyIdToken(userIdToken);
+    if(user.email !== process.env.ADMIN_EMAIL) {
+      return res.status(403).send("Forbidden: Only admin can delete data.");
+    }
+    await udpDataRef.child(targetItem).remove();
+    res.status(200).send("Item Data Deleted Successfully.")
+  }
+  catch(error){
+    console.log(error);
+    res.status(500).send("There Was An Internal Error In The Server Side, Please Try Again.")
+  }
+})
 
 
 const PORT = process.env.PORT || 5000;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from '../context/authContext';
 import { AiOutlineLoading } from "react-icons/ai";
 
-const Udpinput = () => {
+const Udpinput = ({ getUdpDATA }) => {
     const [inputVal, setInputVal] = useState('');
     const [isOk, setIsOK] = useState(null);
     const [isFail, setIsFail] = useState(null);
@@ -45,6 +45,7 @@ const Udpinput = () => {
             if (response.ok) {
                 setIsOK(true);
                 setIsFail(false);
+                getUdpDATA();
             } else {
                 console.error("Failed to send UDP data:", response.status);
                 setIsOK(false);
@@ -71,7 +72,7 @@ const Udpinput = () => {
                     type="text"
                     value={inputVal}
                     onChange={(e) => setInputVal(e.target.value)}
-                    placeholder="UDP Data.."
+                    placeholder="Type SSH UDP Data.."
                     className="placeholder:text-neutral-400 border border-neutral-600 rounded-[4px] m-2 p-2 outline-none focus:border-neutral-500 font-bold w-[390px]"
                 />
                 <button

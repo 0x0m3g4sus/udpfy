@@ -1,1 +1,4 @@
 @import "tailwindcss";
+body{
+  font-family: "Iceland", sans-serif;
+}
