@@ -48,7 +48,7 @@ export default function LoginPage() {
         <div className="min-h-screen flex items-center justify-center bg-black">
             {isOnAuthLoading ? <Loading/> : null}
             <div className={`bg-neutral-800 p-8 mx-2 rounded-lg w-full max-w-md ${isOnAuthLoading ? 'hidden' : null}`}>
-                <h1 className="text-[22px] font-bold text-center mb-6 text-orange-400">Login To <span className='bg-amber-900 px-1 rounded-[4px]'>Mega UDP</span> With Your Google Account</h1>
+                <h1 className="text-[22px] font-bold text-center mb-6 text-orange-400">Login To <span className='bg-amber-900 px-1 rounded-[4px]'>Mega SSH UDP</span> With Your Google Account</h1>
                 {isError ? <p className='text-red-500 text-center m-1'>{errorContent}</p> : null}
                 <button
                     disabled={isLoading}
