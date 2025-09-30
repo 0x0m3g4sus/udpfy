@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div className="bg-neutral-900 shadow-2xl rounded-[4px] p-10 border border-neutral-700 transform transition-all duration-500">
           <p className="text-xl text-gray-300 mb-6 leading-relaxed">
             <FaGlobeAmericas className="inline-block text-orange-400 mr-3" />
-            Welcome to the About page of the Mega SSH UDP Web App! Our core mission is to empower users by providing free, reliable UDP configurations. These configurations are meticulously crafted to enable seamless utilization of HTTP Custom VPNs, ensuring your online privacy and freedom.
+            Welcome to the About page of the Udpfy Web App! Our core mission is to empower users by providing free, reliable UDP configurations. These configurations are meticulously crafted to enable seamless utilization of HTTP Custom VPNs, ensuring your online privacy and freedom.
           </p>
           <p className="text-xl text-gray-300 mb-6 leading-relaxed">
             <FaUserTie className="inline-block text-orange-400 mr-3" />
